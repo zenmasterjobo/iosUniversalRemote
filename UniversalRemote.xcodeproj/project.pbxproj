@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8B599D1EA5884600F3268A /* NSData+Int8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8B599C1EA5884600F3268A /* NSData+Int8.swift */; };
 		2BB702C41E9EFF1A006267F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB702C31E9EFF1A006267F7 /* AppDelegate.swift */; };
 		2BB702C61E9EFF1A006267F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB702C51E9EFF1A006267F7 /* ViewController.swift */; };
 		2BB702C91E9EFF1A006267F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB702C71E9EFF1A006267F7 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B8B599C1EA5884600F3268A /* NSData+Int8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Int8.swift"; sourceTree = "<group>"; };
 		2BB702C01E9EFF1A006267F7 /* UniversalRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB702C31E9EFF1A006267F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BB702C51E9EFF1A006267F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				2BB702C31E9EFF1A006267F7 /* AppDelegate.swift */,
 				2BB702C51E9EFF1A006267F7 /* ViewController.swift */,
 				2BB702F41E9F01A4006267F7 /* SimpleBluetoothIO.swift */,
+				2B8B599C1EA5884600F3268A /* NSData+Int8.swift */,
 				2BB702C71E9EFF1A006267F7 /* Main.storyboard */,
 				2BB702CD1E9EFF1A006267F7 /* Assets.xcassets */,
 				2BB702CF1E9EFF1A006267F7 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8B599D1EA5884600F3268A /* NSData+Int8.swift in Sources */,
 				2BB702C61E9EFF1A006267F7 /* ViewController.swift in Sources */,
 				2BB702C41E9EFF1A006267F7 /* AppDelegate.swift in Sources */,
 				2BB702F51E9F01A4006267F7 /* SimpleBluetoothIO.swift in Sources */,
@@ -515,6 +519,7 @@
 				2BB702ED1E9EFF1A006267F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BB702EE1E9EFF1A006267F7 /* Build configuration list for PBXNativeTarget "UniversalRemoteTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +528,7 @@
 				2BB702F01E9EFF1A006267F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BB702F11E9EFF1A006267F7 /* Build configuration list for PBXNativeTarget "UniversalRemoteUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +537,7 @@
 				2BB702F31E9EFF1A006267F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

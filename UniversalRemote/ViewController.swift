@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var simpleBluetoothIO: SimpleBluetoothIO!
 
+    @IBOutlet weak var receivedCode: UILabel!
+    @IBOutlet weak var sendCodeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "19B10010-E8F2-537E-4F6C-D104768A1214", delegate: self as? SimpleBluetoothIODelegate)
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        simpleBluetoothIO.writeValue(value: 1)
+
+    }
+    
+    func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
+        receivedCode.text = String(value)
+    }
 
 }
 
