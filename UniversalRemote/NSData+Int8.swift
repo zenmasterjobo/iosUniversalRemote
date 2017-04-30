@@ -9,12 +9,15 @@
 import Foundation
 
 extension Data {
-    static func dataWithValue(value: Int8) -> Data {
+    static func dataWithValue(value: UInt32) -> Data {
         var variableValue = value
         return Data(buffer: UnsafeBufferPointer(start: &variableValue, count: 1))
     }
     
-    func int8Value() -> Int8 {
-        return Int8(bitPattern: self[0])
+    func uInt32Value() -> UInt32 {
+        var temp = UInt32(bitPattern: Int32(self[0]))
+        return temp
+        //return UInt32(bitPattern: Int32(self[0]))
     }
+
 }

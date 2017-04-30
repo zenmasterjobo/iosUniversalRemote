@@ -25,11 +25,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonClicked(_ sender: UIButton) {
-        simpleBluetoothIO.writeValue(value: 1)
+        simpleBluetoothIO.writeValue(value: 691090)
 
     }
     
-    func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8) {
+    func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: UInt32) {
         receivedCode.text = String(value)
     }
 

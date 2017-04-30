@@ -1,8 +1,9 @@
 import CoreBluetooth
 
 protocol SimpleBluetoothIODelegate: class {
-    func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: Int8)
+    func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: UInt32)
 }
+
 
 class SimpleBluetoothIO: NSObject {
     let serviceUUID: String
@@ -22,7 +23,7 @@ class SimpleBluetoothIO: NSObject {
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
 
-    func writeValue(value: Int8) {
+    func writeValue(value: UInt32) {
         guard let peripheral = connectedPeripheral, let characteristic = writableCharacteristic else {
             return
         }
@@ -80,12 +81,13 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
             peripheral.setNotifyValue(true, for: characteristic)
         }
     }
-
+/*
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        guard let data = characteristic.value, let delegate = delegate else {
-            return
+        guard let data = characteristic.value, let delegate = delegate
+            else {
+                return
         }
-
-        delegate.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.int8Value())
+        delegate.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.uInt32Value())
     }
+ */
 }
