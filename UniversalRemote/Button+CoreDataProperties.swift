@@ -19,15 +19,17 @@ extension Button {
 
 
     //@NSManaged public var button_id: Int32
+    @NSManaged public var device_name: String?
     @NSManaged public var device_id: Int32
     @NSManaged public var ir_code: String?
+    @NSManaged public var button_type: String?
     @NSManaged public var device: Device?
     
     
-    @nonobjc public class func fetchAllRequest(_ device:Int32) -> NSFetchRequest<Button> {
+    @nonobjc public class func fetchRequestForDevice(_ device:String) -> NSFetchRequest<Button> {
         let fetchRequest = NSFetchRequest<Button>(entityName: "Button")
         
-        fetchRequest.predicate = NSPredicate(format: "device_id == \(device)")//, 1)
+        fetchRequest.predicate = NSPredicate(format: "device_name == \"\(device)\"")//, 1)
         return fetchRequest
     }
 

@@ -16,6 +16,8 @@ class ButtonViewController: UIViewController {
     @IBOutlet weak var deviceTextField: UITextField!
     @IBOutlet weak var irTextField: UITextField!
     
+    var deviceName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,8 +36,14 @@ class ButtonViewController: UIViewController {
         let _ = navigationController?.popViewController(animated: true)
     }
 
+    func deviceForThisView(_ device: String) {
+        //let device = device.artistName()!
+        //artistID = artist.artistID()!
+        //print ("\(name), \(artistID!)")
+        print ("DEVICE FOR THIS VIEW: \(deviceName!)")
+        self.deviceName = device
+    }
     
-        
         
     
 //    override func didReceiveMemoryWarning() {

@@ -12,23 +12,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var simpleBluetoothIO: SimpleBluetoothIO!
 
     var tasks: [Button] = []
+    var devices: [Device] = []
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    @IBOutlet weak var irCodeTableView: UITableView!
+    @IBOutlet weak var deviceTableView: UITableView!
+
     @IBOutlet weak var receivedCode: UILabel!
     @IBOutlet weak var sendCodeButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        irCodeTableView.delegate = self
-        irCodeTableView.dataSource = self
+        title = "My Remotes"
+        deviceTableView.delegate = self
+        deviceTableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
         simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "19B10010-E8F2-537E-4F6C-D104768A1214", delegate: self as? SimpleBluetoothIODelegate)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         getData()
-        irCodeTableView.reloadData()
+        deviceTableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,6 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
+    // for adding a new remote and retrieving ir codes from external remote
     func simpleBluetoothIO(simpleBluetoothIO: SimpleBluetoothIO, didReceiveValue value: UInt32) {
         receivedCode.text = String(value)
     }
@@ -49,16 +55,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return devices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = UITableViewCell()
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceCell", for: indexPath)
-        let button = tasks[indexPath.row]
+        let device = devices[indexPath.row]
         
-        if let ir_code = button.ir_code {
-            cell.textLabel?.text = ir_code
+        if let deviceName = device.name {
+            cell.textLabel?.text = deviceName
         }
         /*
          let cell = tableView.dequeueReusableCell(withIdentifier: "ArtistCell", for: indexPath)
@@ -74,7 +80,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func getData() {
         do {
-            tasks = try context.fetch(Button.fetchRequest())//fetchAllRequest(1))//fetchRequest())
+            devices = try context.fetch(Device.fetchRequest())//fetchRequest())
         }
         catch {
             print("Fetching Failed")
@@ -83,13 +89,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let task = tasks[indexPath.row]
+            let task = devices[indexPath.row]
             context.delete(task)
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
             
             do {
 //                tasks = try context.fetch(Button.fetchRequest())
-                tasks = try context.fetch(Button.fetchAllRequest(1))
+                devices = try context.fetch(Device.fetchRequest())
 
             }
             catch {
@@ -99,30 +105,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.reloadData()
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "ShowButtons" {
-            
-            /* if let row = tableView.indexPathForSelectedRow?.row {
-             let artist = artistsDS?.artistAt(row)
-             let detailedVC = segue.destination as! AlbumTableViewController
-             detailedVC.albumForThisView(artist!)
-             }*/
-            
-            // OR
-           // let cell = sender as! ArtistTableViewCell
-           // if let indexPath = tableView.indexPath(for: cell), let ds = artistsDS {
-           //     let detailedVC = segue.destination as! AlbumTableViewController
-           //     detailedVC.artistForThisView(ds.artistAt(indexPath.row))
-           // }
-            
+             if let row = deviceTableView.indexPathForSelectedRow?.row {
+             let detailedVC = segue.destination as! RemoteViewController
+             detailedVC.deviceForThisView(devices[row].name!)
+             }
         }
-        
-        
     }
-
-
+    
 }
 

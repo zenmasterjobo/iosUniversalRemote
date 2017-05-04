@@ -23,6 +23,7 @@
 		42041A881EB6D18000856AEB /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A841EB6D18000856AEB /* Device+CoreDataProperties.swift */; };
 		42041A8C1EB6D5E500856AEB /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A8B1EB6D5E500856AEB /* ButtonViewController.swift */; };
 		42041A8E1EB7E23B00856AEB /* RemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A8D1EB7E23B00856AEB /* RemoteViewController.swift */; };
+		42041A901EB7FA3700856AEB /* DeviceCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A8F1EB7FA3700856AEB /* DeviceCreateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		42041A841EB6D18000856AEB /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		42041A8B1EB6D5E500856AEB /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		42041A8D1EB7E23B00856AEB /* RemoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteViewController.swift; sourceTree = "<group>"; };
+		42041A8F1EB7FA3700856AEB /* DeviceCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,18 +117,15 @@
 		2BB702C21E9EFF1A006267F7 /* UniversalRemote */ = {
 			isa = PBXGroup;
 			children = (
-				42041A7E1EB6D0F500856AEB /* UniversalRemote.xcdatamodeld */,
-				42041A751EB6CBBC00856AEB /* Model */,
 				2BB702C31E9EFF1A006267F7 /* AppDelegate.swift */,
-				2BB702C51E9EFF1A006267F7 /* ViewController.swift */,
-				42041A8B1EB6D5E500856AEB /* ButtonViewController.swift */,
-				2BB702F41E9F01A4006267F7 /* SimpleBluetoothIO.swift */,
-				2B8B599C1EA5884600F3268A /* NSData+Int8.swift */,
+				42041A751EB6CBBC00856AEB /* Model */,
+				423EE7BF1EBAAB020035C461 /* View */,
+				423EE7C11EBAAB7F0035C461 /* BlueTooth */,
 				2BB702CD1E9EFF1A006267F7 /* Assets.xcassets */,
 				2BB702C71E9EFF1A006267F7 /* Main.storyboard */,
 				2BB702CF1E9EFF1A006267F7 /* LaunchScreen.storyboard */,
 				2BB702D21E9EFF1A006267F7 /* Info.plist */,
-				42041A8D1EB7E23B00856AEB /* RemoteViewController.swift */,
+				42041A7E1EB6D0F500856AEB /* UniversalRemote.xcdatamodeld */,
 			);
 			path = UniversalRemote;
 			sourceTree = "<group>";
@@ -158,6 +157,26 @@
 				42041A841EB6D18000856AEB /* Device+CoreDataProperties.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		423EE7BF1EBAAB020035C461 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42041A8F1EB7FA3700856AEB /* DeviceCreateViewController.swift */,
+				42041A8B1EB6D5E500856AEB /* ButtonViewController.swift */,
+				2BB702C51E9EFF1A006267F7 /* ViewController.swift */,
+				42041A8D1EB7E23B00856AEB /* RemoteViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		423EE7C11EBAAB7F0035C461 /* BlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				2BB702F41E9F01A4006267F7 /* SimpleBluetoothIO.swift */,
+				2B8B599C1EA5884600F3268A /* NSData+Int8.swift */,
+			);
+			name = BlueTooth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +321,7 @@
 				2BB702C41E9EFF1A006267F7 /* AppDelegate.swift in Sources */,
 				2BB702F51E9F01A4006267F7 /* SimpleBluetoothIO.swift in Sources */,
 				42041A861EB6D18000856AEB /* Button+CoreDataProperties.swift in Sources */,
+				42041A901EB7FA3700856AEB /* DeviceCreateViewController.swift in Sources */,
 				42041A8C1EB6D5E500856AEB /* ButtonViewController.swift in Sources */,
 				42041A8E1EB7E23B00856AEB /* RemoteViewController.swift in Sources */,
 				42041A851EB6D18000856AEB /* Button+CoreDataClass.swift in Sources */,
