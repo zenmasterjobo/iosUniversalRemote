@@ -87,10 +87,10 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
                 if characteristic.uuid == CBUUID(string: "19B10011-E8F2-537E-4F6C-D104768A1214") {
                     print("Found writeValueCharacteristic")
                     writeCodeValueCharacteristic = characteristic
-                } else if characteristic.uuid == CBUUID(string: "19B10013-E8F2-537E-4F6C-D104768A1214") {
+                } else if characteristic.uuid == CBUUID(string: "19B10012-E8F2-537E-4F6C-D104768A1214") {
                     print("Found writeTypeCharacteristic")
                     writeCodeTypeCharacteristic = characteristic
-                } else if characteristic.uuid == CBUUID(string: "19B10014-E8F2-537E-4F6C-D104768A1214") {
+                } else if characteristic.uuid == CBUUID(string: "19B10013-E8F2-537E-4F6C-D104768A1214") {
                     print("Found writeBitCharacteristic")
                     writeCodeBitCharacteristic = characteristic
                 }
@@ -104,6 +104,20 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
                 return
         }
         delegate?.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.uInt32Value())
+        
+        switch characteristic.uuid {
+        case CBUUID(string: "19B10014-E8F2-537E-4F6C-D104768A1214"):
+            var code = data.uInt32Value()
+            
+        case CBUUID(string: "19B10015-E8F2-537E-4F6C-D104768A1214"):
+            var type = data.uInt32Value()
+            
+        case CBUUID(string: "19B10016-E8F2-537E-4F6C-D104768A1214"):
+            var bit = data.uInt32Value()
+        default:
+            print(error!)
+        }
+        
     }
  
 }

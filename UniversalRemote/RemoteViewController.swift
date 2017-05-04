@@ -23,13 +23,10 @@ class RemoteViewController: UIViewController {
         super.viewDidLoad()
 
         getData()
-        print (deviceName!)
-        print (buttons.count)
         title = deviceName!
         
         simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "19B10010-E8F2-537E-4F6C-D104768A1214", delegate: self as? SimpleBluetoothIODelegate)
-        // Do any additional setup after loading the view.
-       // simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "19B10010-E8F2-537E-4F6C-D104768A1214", delegate: self as? SimpleBluetoothIODelegate)
+
         displayRemote()
         
         
@@ -71,7 +68,7 @@ class RemoteViewController: UIViewController {
             print("Fetching Failed")
         }
         simpleBluetoothIO.writeValue(codeValue: UInt32(Int32(sender.tag)), typeValue: code, bitValue: length)
-        alert(message: "This needs to actually be sending ir code \(sender.tag) via blue tooth", title: "❗️❗️❗️")
+        //alert(message: "This needs to actually be sending ir code \(sender.tag) via blue tooth", title: "❗️❗️❗️")
 //        simpleBluetoothIO.writeValue(codeValue: UInt32(Int32(sender.tag)), typeValue: 2, bitValue: 20)
 
     }
