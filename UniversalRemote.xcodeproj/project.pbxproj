@@ -11,12 +11,19 @@
 		2BB702C41E9EFF1A006267F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB702C31E9EFF1A006267F7 /* AppDelegate.swift */; };
 		2BB702C61E9EFF1A006267F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB702C51E9EFF1A006267F7 /* ViewController.swift */; };
 		2BB702C91E9EFF1A006267F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB702C71E9EFF1A006267F7 /* Main.storyboard */; };
-		2BB702CC1E9EFF1A006267F7 /* UniversalRemote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BB702CA1E9EFF1A006267F7 /* UniversalRemote.xcdatamodeld */; };
 		2BB702CE1E9EFF1A006267F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB702CD1E9EFF1A006267F7 /* Assets.xcassets */; };
 		2BB702D11E9EFF1A006267F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB702CF1E9EFF1A006267F7 /* LaunchScreen.storyboard */; };
 		2BB702DC1E9EFF1A006267F7 /* UniversalRemoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB702DB1E9EFF1A006267F7 /* UniversalRemoteTests.swift */; };
 		2BB702E71E9EFF1A006267F7 /* UniversalRemoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB702E61E9EFF1A006267F7 /* UniversalRemoteUITests.swift */; };
 		2BB702F51E9F01A4006267F7 /* SimpleBluetoothIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB702F41E9F01A4006267F7 /* SimpleBluetoothIO.swift */; };
+		42041A801EB6D0F500856AEB /* UniversalRemote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42041A7E1EB6D0F500856AEB /* UniversalRemote.xcdatamodeld */; };
+		42041A851EB6D18000856AEB /* Button+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A811EB6D18000856AEB /* Button+CoreDataClass.swift */; };
+		42041A861EB6D18000856AEB /* Button+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A821EB6D18000856AEB /* Button+CoreDataProperties.swift */; };
+		42041A871EB6D18000856AEB /* Device+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A831EB6D18000856AEB /* Device+CoreDataClass.swift */; };
+		42041A881EB6D18000856AEB /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A841EB6D18000856AEB /* Device+CoreDataProperties.swift */; };
+		42041A8C1EB6D5E500856AEB /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A8B1EB6D5E500856AEB /* ButtonViewController.swift */; };
+		42041A8E1EB7E23B00856AEB /* RemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A8D1EB7E23B00856AEB /* RemoteViewController.swift */; };
+		42041A901EB7FA3700856AEB /* DeviceCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42041A8F1EB7FA3700856AEB /* DeviceCreateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +49,6 @@
 		2BB702C31E9EFF1A006267F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BB702C51E9EFF1A006267F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2BB702C81E9EFF1A006267F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2BB702CB1E9EFF1A006267F7 /* UniversalRemote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UniversalRemote.xcdatamodel; sourceTree = "<group>"; };
 		2BB702CD1E9EFF1A006267F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BB702D01E9EFF1A006267F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BB702D21E9EFF1A006267F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +59,14 @@
 		2BB702E61E9EFF1A006267F7 /* UniversalRemoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalRemoteUITests.swift; sourceTree = "<group>"; };
 		2BB702E81E9EFF1A006267F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BB702F41E9F01A4006267F7 /* SimpleBluetoothIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleBluetoothIO.swift; sourceTree = "<group>"; };
+		42041A7F1EB6D0F500856AEB /* UniversalRemote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UniversalRemote.xcdatamodel; sourceTree = "<group>"; };
+		42041A811EB6D18000856AEB /* Button+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+CoreDataClass.swift"; sourceTree = "<group>"; };
+		42041A821EB6D18000856AEB /* Button+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Button+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42041A831EB6D18000856AEB /* Device+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataClass.swift"; sourceTree = "<group>"; };
+		42041A841EB6D18000856AEB /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42041A8B1EB6D5E500856AEB /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		42041A8D1EB7E23B00856AEB /* RemoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteViewController.swift; sourceTree = "<group>"; };
+		42041A8F1EB7FA3700856AEB /* DeviceCreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCreateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,14 +118,14 @@
 			isa = PBXGroup;
 			children = (
 				2BB702C31E9EFF1A006267F7 /* AppDelegate.swift */,
-				2BB702C51E9EFF1A006267F7 /* ViewController.swift */,
-				2BB702F41E9F01A4006267F7 /* SimpleBluetoothIO.swift */,
-				2B8B599C1EA5884600F3268A /* NSData+Int8.swift */,
-				2BB702C71E9EFF1A006267F7 /* Main.storyboard */,
+				42041A751EB6CBBC00856AEB /* Model */,
+				423EE7BF1EBAAB020035C461 /* View */,
+				423EE7C11EBAAB7F0035C461 /* BlueTooth */,
 				2BB702CD1E9EFF1A006267F7 /* Assets.xcassets */,
+				2BB702C71E9EFF1A006267F7 /* Main.storyboard */,
 				2BB702CF1E9EFF1A006267F7 /* LaunchScreen.storyboard */,
 				2BB702D21E9EFF1A006267F7 /* Info.plist */,
-				2BB702CA1E9EFF1A006267F7 /* UniversalRemote.xcdatamodeld */,
+				42041A7E1EB6D0F500856AEB /* UniversalRemote.xcdatamodeld */,
 			);
 			path = UniversalRemote;
 			sourceTree = "<group>";
@@ -132,6 +146,37 @@
 				2BB702E81E9EFF1A006267F7 /* Info.plist */,
 			);
 			path = UniversalRemoteUITests;
+			sourceTree = "<group>";
+		};
+		42041A751EB6CBBC00856AEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				42041A811EB6D18000856AEB /* Button+CoreDataClass.swift */,
+				42041A821EB6D18000856AEB /* Button+CoreDataProperties.swift */,
+				42041A831EB6D18000856AEB /* Device+CoreDataClass.swift */,
+				42041A841EB6D18000856AEB /* Device+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		423EE7BF1EBAAB020035C461 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42041A8F1EB7FA3700856AEB /* DeviceCreateViewController.swift */,
+				42041A8B1EB6D5E500856AEB /* ButtonViewController.swift */,
+				2BB702C51E9EFF1A006267F7 /* ViewController.swift */,
+				42041A8D1EB7E23B00856AEB /* RemoteViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		423EE7C11EBAAB7F0035C461 /* BlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				2BB702F41E9F01A4006267F7 /* SimpleBluetoothIO.swift */,
+				2B8B599C1EA5884600F3268A /* NSData+Int8.swift */,
+			);
+			name = BlueTooth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +315,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B8B599D1EA5884600F3268A /* NSData+Int8.swift in Sources */,
+				42041A881EB6D18000856AEB /* Device+CoreDataProperties.swift in Sources */,
+				42041A871EB6D18000856AEB /* Device+CoreDataClass.swift in Sources */,
+				42041A801EB6D0F500856AEB /* UniversalRemote.xcdatamodeld in Sources */,
 				2BB702C61E9EFF1A006267F7 /* ViewController.swift in Sources */,
 				2BB702C41E9EFF1A006267F7 /* AppDelegate.swift in Sources */,
 				2BB702F51E9F01A4006267F7 /* SimpleBluetoothIO.swift in Sources */,
-				2BB702CC1E9EFF1A006267F7 /* UniversalRemote.xcdatamodeld in Sources */,
+				42041A861EB6D18000856AEB /* Button+CoreDataProperties.swift in Sources */,
+				42041A901EB7FA3700856AEB /* DeviceCreateViewController.swift in Sources */,
+				42041A8C1EB6D5E500856AEB /* ButtonViewController.swift in Sources */,
+				42041A8E1EB7E23B00856AEB /* RemoteViewController.swift in Sources */,
+				42041A851EB6D18000856AEB /* Button+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,12 +597,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2BB702CA1E9EFF1A006267F7 /* UniversalRemote.xcdatamodeld */ = {
+		42041A7E1EB6D0F500856AEB /* UniversalRemote.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2BB702CB1E9EFF1A006267F7 /* UniversalRemote.xcdatamodel */,
+				42041A7F1EB6D0F500856AEB /* UniversalRemote.xcdatamodel */,
 			);
-			currentVersion = 2BB702CB1E9EFF1A006267F7 /* UniversalRemote.xcdatamodel */;
+			currentVersion = 42041A7F1EB6D0F500856AEB /* UniversalRemote.xcdatamodel */;
 			path = UniversalRemote.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

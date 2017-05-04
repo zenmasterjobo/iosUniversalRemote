@@ -12,7 +12,7 @@ class SimpleBluetoothIO: NSObject {
     var centralManager: CBCentralManager!
     var connectedPeripheral: CBPeripheral?
     var targetService: CBService?
-    var writableCharacteristic: CBCharacteristic?
+    var readCodeValueCharacteristic: CBCharacteristic?
     var writeCodeValueCharacteristic: CBCharacteristic?
     var writeCodeTypeCharacteristic: CBCharacteristic?
     var writeCodeBitCharacteristic: CBCharacteristic?
@@ -100,10 +100,10 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
     }
 
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        guard let data = characteristic.value, let delegate = delegate else {
+        guard let data = characteristic.value else {
                 return
         }
-        delegate.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.uInt32Value())
+        delegate?.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.uInt32Value())
     }
  
 }
