@@ -55,6 +55,8 @@ class DeviceCreateViewController: UIViewController {
         button.button_type = "On/Off"
         button.ir_code = "691090"
         button.device_name = dname
+        button.code_type = 2
+        button.bit_length = 20
         // Save the data to coredata
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         //let _ = navigationController?.popViewController(animated: true)
@@ -64,6 +66,8 @@ class DeviceCreateViewController: UIViewController {
         button2.button_type = "Open/Close"
         button2.ir_code = "428946"
         button2.device_name = dname
+        button2.code_type = 2
+        button2.bit_length = 20
         // Save the data to coredata
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -73,6 +77,8 @@ class DeviceCreateViewController: UIViewController {
         button3.ir_code = "314285"
         button3.device_name = dname
         // Save the data to coredata
+        button3.code_type = 2
+        button3.bit_length = 20
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         //Pause
@@ -80,6 +86,8 @@ class DeviceCreateViewController: UIViewController {
         buttonpause.button_type = "Pause"
         buttonpause.ir_code = "641938"
         buttonpause.device_name = dname
+        buttonpause.code_type = 2
+        buttonpause.bit_length = 20
         // Save the data to coredata
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -88,6 +96,8 @@ class DeviceCreateViewController: UIViewController {
         button4.button_type = "Fast Forward"
         button4.ir_code = "805778"
         button4.device_name = dname
+        button4.code_type = 2
+        button4.bit_length = 20
         // Save the data to coredata
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -96,6 +106,8 @@ class DeviceCreateViewController: UIViewController {
         button5.button_type = "Rewind"
         button5.ir_code = "281490"
         button5.device_name = dname
+        button5.code_type = 2
+        button5.bit_length = 20
         // Save the data to coredata
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
@@ -104,6 +116,8 @@ class DeviceCreateViewController: UIViewController {
         button6.button_type = "Skip"
         button6.ir_code = "805778"
         button6.device_name = dname
+        button6.code_type = 2
+        button6.bit_length = 20
         // Save the data to coredata
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         

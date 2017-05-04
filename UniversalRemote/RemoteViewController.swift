@@ -59,7 +59,18 @@ class RemoteViewController: UIViewController {
     
     @IBAction func buttonDidTap(_ sender: UIButton) {
         //let temp = sender.tag
-        simpleBluetoothIO.writeValue(value: UInt32(Int32(sender.tag)))
+        var code: UInt32 = 0
+        var length: UInt32 = 0
+        var b: [Button] = []
+        do {
+            b = try context.fetch(Button.fetchRequestButtonWithIRCode("\(sender.tag)"))
+            code =   UInt32(Int32(Int32(b[0].code_type)))
+            length = UInt32(Int32(Int32(b[0].bit_length)))
+        }
+        catch {
+            print("Fetching Failed")
+        }
+        simpleBluetoothIO.writeValue(value: UInt32(Int32(sender.tag)), something: code, something: length)
         alert(message: "This needs to actually be sending ir code \(sender.tag) via blue tooth", title: "❗️❗️❗️")
     }
    

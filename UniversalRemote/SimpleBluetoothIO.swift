@@ -81,7 +81,7 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
             peripheral.setNotifyValue(true, for: characteristic)
         }
     }
-/*
+
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         guard let data = characteristic.value, let delegate = delegate
             else {
@@ -89,5 +89,5 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
         }
         delegate.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.uInt32Value())
     }
- */
+ 
 }

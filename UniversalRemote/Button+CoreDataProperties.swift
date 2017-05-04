@@ -19,6 +19,8 @@ extension Button {
 
 
     //@NSManaged public var button_id: Int32
+    @NSManaged public var bit_length: UInt32
+    @NSManaged public var code_type: UInt32
     @NSManaged public var device_name: String?
     @NSManaged public var device_id: Int32
     @NSManaged public var ir_code: String?
@@ -30,6 +32,13 @@ extension Button {
         let fetchRequest = NSFetchRequest<Button>(entityName: "Button")
         
         fetchRequest.predicate = NSPredicate(format: "device_name == \"\(device)\"")//, 1)
+        return fetchRequest
+    }
+    
+    @nonobjc public class func fetchRequestButtonWithIRCode(_ irCode:String) -> NSFetchRequest<Button> {
+        let fetchRequest = NSFetchRequest<Button>(entityName: "Button")
+        
+        fetchRequest.predicate = NSPredicate(format: "ir_code == \"\(irCode)\"")//, 1)
         return fetchRequest
     }
 
