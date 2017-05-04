@@ -15,8 +15,7 @@ extension Data {
     }
     
     func uInt32Value() -> UInt32 {
-        var temp = UInt32(bitPattern: Int32(self[0]))
-        return temp
+        return UInt32(bitPattern: Int32(self[0]))
         //return UInt32(bitPattern: Int32(self[0]))
     }
 
