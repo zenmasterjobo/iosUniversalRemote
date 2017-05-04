@@ -247,6 +247,7 @@
 				TargetAttributes = {
 					2BB702BF1E9EFF1A006267F7 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = X9VJJQ52LF;
 						ProvisioningStyle = Automatic;
 					};
 					2BB702D61E9EFF1A006267F7 = {
@@ -478,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X9VJJQ52LF;
 				INFOPLIST_FILE = UniversalRemote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Crosser.UniversalRemote;
@@ -490,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X9VJJQ52LF;
 				INFOPLIST_FILE = UniversalRemote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Crosser.UniversalRemote;

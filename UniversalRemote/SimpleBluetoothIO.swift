@@ -12,7 +12,10 @@ class SimpleBluetoothIO: NSObject {
     var centralManager: CBCentralManager!
     var connectedPeripheral: CBPeripheral?
     var targetService: CBService?
-    var writableCharacteristic: CBCharacteristic?
+    var readCodeValueCharacteristic: CBCharacteristic?
+    var writeCodeValueCharacteristic: CBCharacteristic?
+    var writeCodeTypeCharacteristic: CBCharacteristic?
+    var writeCodeBitCharacteristic: CBCharacteristic?
 
     init(serviceUUID: String, delegate: SimpleBluetoothIODelegate?) {
         self.serviceUUID = serviceUUID
@@ -23,13 +26,18 @@ class SimpleBluetoothIO: NSObject {
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
 
-    func writeValue(value: UInt32) {
-        guard let peripheral = connectedPeripheral, let characteristic = writableCharacteristic else {
+    func writeValue(codeValue: UInt32, typeValue: UInt32, bitValue: UInt32) {
+        guard let peripheral = connectedPeripheral, let codeCharacteristic = writeCodeValueCharacteristic, let typeCharacteristic = writeCodeTypeCharacteristic, let bitCharacteristic = writeCodeBitCharacteristic else {
             return
         }
 
-        let data = Data.dataWithValue(value: value)
-        peripheral.writeValue(data, for: characteristic, type: .withResponse)
+        let Code = Data.dataWithValue(value: codeValue)
+        let Type = Data.dataWithValue(value: typeValue)
+        let Bit = Data.dataWithValue(value: bitValue)
+        peripheral.writeValue(Code, for: codeCharacteristic, type: .withResponse)
+        peripheral.writeValue(Type, for: typeCharacteristic, type: .withResponse)
+        peripheral.writeValue(Bit, for: bitCharacteristic, type: .withResponse)
+
     }
 
 }
@@ -76,18 +84,26 @@ extension SimpleBluetoothIO: CBPeripheralDelegate {
 
         for characteristic in characteristics {
             if characteristic.properties.contains(.write) || characteristic.properties.contains(.writeWithoutResponse) {
-                writableCharacteristic = characteristic
+                if characteristic.uuid == CBUUID(string: "19B10011-E8F2-537E-4F6C-D104768A1214") {
+                    print("Found writeValueCharacteristic")
+                    writeCodeValueCharacteristic = characteristic
+                } else if characteristic.uuid == CBUUID(string: "19B10013-E8F2-537E-4F6C-D104768A1214") {
+                    print("Found writeTypeCharacteristic")
+                    writeCodeTypeCharacteristic = characteristic
+                } else if characteristic.uuid == CBUUID(string: "19B10014-E8F2-537E-4F6C-D104768A1214") {
+                    print("Found writeBitCharacteristic")
+                    writeCodeBitCharacteristic = characteristic
+                }
             }
             peripheral.setNotifyValue(true, for: characteristic)
         }
     }
 
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        guard let data = characteristic.value, let delegate = delegate
-            else {
+        guard let data = characteristic.value else {
                 return
         }
-        delegate.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.uInt32Value())
+        delegate?.simpleBluetoothIO(simpleBluetoothIO: self, didReceiveValue: data.uInt32Value())
     }
  
 }

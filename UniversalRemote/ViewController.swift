@@ -5,7 +5,6 @@
 //  Created by Brian Crosser on 4/12/17.
 //  Copyright © 2017 CCB. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -28,22 +27,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         deviceTableView.delegate = self
         deviceTableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
-        simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "19B10010-E8F2-537E-4F6C-D104768A1214", delegate: self as? SimpleBluetoothIODelegate)
+       // simpleBluetoothIO = SimpleBluetoothIO(serviceUUID: "19B10010-E8F2-537E-4F6C-D104768A1214", delegate: self as? SimpleBluetoothIODelegate)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         getData()
         deviceTableView.reloadData()
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func buttonClicked(_ sender: UIButton) {
-        simpleBluetoothIO.writeValue(value: 691090)
-        print("pressed button")
+        simpleBluetoothIO.writeValue(codeValue: 691090, typeValue: 2, bitValue: 20)
+        
+         print("pressed button")
 
     }
     
@@ -52,8 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         receivedCode.text = String(value)
     }
     
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return devices.count
     }
@@ -117,4 +117,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
 }
-

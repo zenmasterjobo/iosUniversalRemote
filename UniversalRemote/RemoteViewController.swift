@@ -70,8 +70,10 @@ class RemoteViewController: UIViewController {
         catch {
             print("Fetching Failed")
         }
-        simpleBluetoothIO.writeValue(value: UInt32(Int32(sender.tag)), something: code, something: length)
+        simpleBluetoothIO.writeValue(codeValue: UInt32(Int32(sender.tag)), typeValue: code, bitValue: length)
         alert(message: "This needs to actually be sending ir code \(sender.tag) via blue tooth", title: "❗️❗️❗️")
+//        simpleBluetoothIO.writeValue(codeValue: UInt32(Int32(sender.tag)), typeValue: 2, bitValue: 20)
+
     }
    
     func deviceForThisView(_ device: String) {
